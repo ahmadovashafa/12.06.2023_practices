@@ -35,3 +35,25 @@ name   varchar2(30)constraint name_nn not null,
 age number constraint age_ck check (age>=18 and age<=70),
 birthday date constraint birthday_nn not null,
 phone number constraint phone_uq unique);
+
+
+---single row functions
+
+select upper(customer_name)from sales_data;
+select lower(customer_name)from sales_data;
+select initcap(customer_name)from sales_data;
+select concat(customer_address, customer_city) from sales_data;
+select length (customer_name) from sales_data;
+select substr ('Hello World',1,1) from dual;
+select instr ('Hello World','o') from dual;
+select round(19.2356,2) from dual;
+select trunc(19.2356,2) from dual;
+select mod(30,4) from dual;
+select abs(-57) from dual;
+select sqrt(16) from dual;
+select last_day('12-Jun-2023') from dual;
+select next_day('12-Jun-2023','Friday') from dual;
+select months_between('12-Dec-2023','12-Jun-2023') from dual;
+select sysdate from dual;
+select*from sales_data;
+select to_char(customer_phone)from sales_data;
