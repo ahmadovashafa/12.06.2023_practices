@@ -1,0 +1,37 @@
+--create
+create table customers
+(customers_id  number,
+name varchar2(30),
+surname varchar2 (30),
+phone number,
+birthday date,
+address varchar2(30),
+fincode varchar2(30));--create
+
+
+--alter 
+alter  table customers drop column surname; 
+alter table customers add regions varchar2(30);
+
+--primary key
+create table cardd(
+card_id number primary key,--pk
+card_name varchar2(30),
+status varchar2(30));
+
+--foreign key
+create table card_sales1 (
+card_sales_id number primary key,
+amount number,
+currency_id number,
+card_id number,
+constraint card_sales_fk foreign key (card_id) references cardd (card_id) 
+);
+
+--constraint 
+create table cust(
+id number primary key,
+name   varchar2(30)constraint name_nn not null,
+age number constraint age_ck check (age>=18 and age<=70),
+birthday date constraint birthday_nn not null,
+phone number constraint phone_uq unique);
