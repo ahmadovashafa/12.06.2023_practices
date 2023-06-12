@@ -57,3 +57,14 @@ select months_between('12-Dec-2023','12-Jun-2023') from dual;
 select sysdate from dual;
 select*from sales_data;
 select to_char(customer_phone)from sales_data;
+
+
+-----
+aggregate functions
+select*from sales_data;
+select count(quantity) from sales_data;
+select sum(quantity) from sales_data;
+select min(quantity) from sales_data;
+select max(quantity) from sales_data;
+select avg(quantity) from sales_data;
+--select median(customer_id) from sales_data;
