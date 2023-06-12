@@ -35,3 +35,25 @@ name   varchar2(30)constraint name_nn not null,
 age number constraint age_ck check (age>=18 and age<=70),
 birthday date constraint birthday_nn not null,
 phone number constraint phone_uq unique);
+
+
+drop table customers;
+
+
+--select
+
+select *from sales_data;
+
+select sale_id,customer_name from sales_data;
+
+
+select* from sales_data where customer_name='Jed Millard';
+
+select product_category, count(*)as quantity from sales_data 
+group by product_category
+having count(*)>50;
+
+select customer_id
+    from sales_data
+    order by customer_id desc
+    fetch first 5 rows only;
