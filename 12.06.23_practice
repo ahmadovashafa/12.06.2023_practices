@@ -68,3 +68,22 @@ select min(quantity) from sales_data;
 select max(quantity) from sales_data;
 select avg(quantity) from sales_data;
 select median(salary) from employees;
+
+
+--select
+
+select *from sales_data;
+
+select sale_id,customer_name from sales_data;
+
+
+select* from sales_data where customer_name='Jed Millard';
+
+select product_category, count(*)as quantity from sales_data 
+group by product_category
+having count(*)>50;
+
+select customer_id
+    from sales_data
+    order by customer_id desc
+    fetch first 5 rows only;
